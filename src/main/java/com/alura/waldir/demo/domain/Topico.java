@@ -21,7 +21,7 @@ public class Topico {
     private String mensaje;
     @Column(name = "fecha_Creacion")
     private LocalDateTime fecha_Creacion;
-    private Integer status;
+    private Boolean status;
     private String autor;
     private String curso;
     private String respuestas;
@@ -32,7 +32,17 @@ public class Topico {
         this.autor= dataRegisterTopico.autor();
         this.curso= dataRegisterTopico.curso();
         this.fecha_Creacion = LocalDateTime.now();
-        this.status = 1;
+        this.status = true;
         this.respuestas=null;
+    }
+
+    public void eliminarTopico() {
+        this.status = false;
+    }
+
+    public void dataUpdate(DataupdateTopico dataupdateTopico){
+        if(dataupdateTopico.titulo() != null && !dataupdateTopico.titulo().equals(this.titulo)){this.titulo = dataupdateTopico.titulo();}
+        if(dataupdateTopico.mensaje() != null && !dataupdateTopico.mensaje().equals(this.mensaje)){this.mensaje = dataupdateTopico.mensaje();}
+        if(dataupdateTopico.curso() != null && !dataupdateTopico.curso().equals(this.curso)){this.curso = dataupdateTopico.curso();}
     }
 }
