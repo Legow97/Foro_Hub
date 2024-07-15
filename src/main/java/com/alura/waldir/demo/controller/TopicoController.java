@@ -8,7 +8,10 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
 
+
+import java.net.URI;
 import java.util.Optional;
 
 @RestController
@@ -19,10 +22,11 @@ public class TopicoController {
     private TopicoRepository topicoRepository;
 
     @PostMapping
-    public ResponseEntity registrarTopico(@RequestBody @Valid DataRegisterTopico dataRegisterTopico){
+    public ResponseEntity registrarTopico(@RequestBody @Valid DataRegisterTopico dataRegisterTopico, UriComponentsBuilder uriComponentsBuilder){
         Topico topico = topicoRepository.save(new Topico(dataRegisterTopico));
-        System.out.println(topico);
-        return ResponseEntity.ok(topico);
+        DataResponseTopico dataResponseTopico = new DataResponseTopico(topico);
+        URI url = uriComponentsBuilder.path("/topicos/{id}").buildAndExpand(topico.getId()).toUri();
+        return ResponseEntity.created(url).body(dataResponseTopico);
     }
 
     @GetMapping("/listar")
