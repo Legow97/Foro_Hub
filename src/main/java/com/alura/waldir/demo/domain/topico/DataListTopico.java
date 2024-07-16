@@ -1,18 +1,16 @@
-package com.alura.waldir.demo.domain;
+package com.alura.waldir.demo.domain.topico;
 
 import java.time.LocalDateTime;
 
-public record DataResponseTopico(
+public record DataListTopico(
         Long id,
         String titulo,
         String mensaje,
         String curso,
         LocalDateTime fecha_Creacion
+
 ) {
-    public DataResponseTopico(Topico topico) {
+    public DataListTopico(Topico topico) {
         this(topico.getId(), topico.getTitulo(), topico.getMensaje().toString(),topico.getCurso().toString(), topico.getFecha_Creacion());
     }
 }
-
-
-

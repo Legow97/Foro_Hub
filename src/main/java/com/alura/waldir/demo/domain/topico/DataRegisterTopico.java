@@ -1,4 +1,4 @@
-package com.alura.waldir.demo.domain;
+package com.alura.waldir.demo.domain.topico;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.validation.Valid;

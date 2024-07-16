@@ -1,4 +1,4 @@
-package com.alura.waldir.demo.domain;
+package com.alura.waldir.demo.domain.topico;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

@@ -1,4 +1,4 @@
-package com.alura.waldir.demo.domain;
+package com.alura.waldir.demo.domain.topico;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;

@@ -1,7 +1,8 @@
-package com.alura.waldir.demo.domain;
+package com.alura.waldir.demo.domain.topico;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -13,6 +14,7 @@ import java.time.LocalDateTime;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(of ="id")
 public class Topico {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

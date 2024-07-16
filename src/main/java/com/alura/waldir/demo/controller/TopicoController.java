@@ -1,6 +1,6 @@
 package com.alura.waldir.demo.controller;
 
-import com.alura.waldir.demo.domain.*;
+import com.alura.waldir.demo.domain.topico.*;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +18,12 @@ import java.util.Optional;
 @RequestMapping("/topicos")
 public class TopicoController {
 
+    private final TopicoRepository topicoRepository;
+
     @Autowired
-    private TopicoRepository topicoRepository;
+    public TopicoController(TopicoRepository topicoRepository) {
+        this.topicoRepository = topicoRepository;
+    }
 
     @PostMapping
     public ResponseEntity registrarTopico(@RequestBody @Valid DataRegisterTopico dataRegisterTopico, UriComponentsBuilder uriComponentsBuilder){
