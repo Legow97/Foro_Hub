@@ -132,5 +132,5 @@ http://localhost:8080/swagger-ui.html
 
 ## Conclusión
 El proyecto ForoHub ha abarcado muchos aspectos y funcionalidades de spring, ha sido un tanto complejo pero muy enriquecedor y satisfactorio el proceso,
-falta completar varias funcionalidades e implementar otras rutas. Les el diagrama de la BD.
+falta completar varias funcionalidades e implementar otras rutas. Les dejo el diagrama de la BD por si se atreven a implementar y construir el proyecto paso a paso.
 ![Diagrama completo de BF ForoHub](src/images/diagrama_bd_forohub.png)
